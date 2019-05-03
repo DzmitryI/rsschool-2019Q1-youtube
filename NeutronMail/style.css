@@ -90,7 +90,7 @@ body {
 }
 
 .header {
-  background: url("./assets/images/Layer_1_copy@1X.png") no-repeat 37% 69%;
+  background: url("./assets/images/Layer_1_copy@1X.png") no-repeat 37% 65%;
 }
 
 .header-section-1 {
@@ -217,8 +217,7 @@ body {
 }
 
 .header-section-2-inner {
-  margin-left: 29%;
-  width: 95%;
+  width: 100%;
   height: 101px;
   padding-top: 9.5%;
   font-family: "TitilliumWeb-Regular", "TitilliumWeb-SemiBold";
@@ -227,18 +226,16 @@ body {
 
 .header-section-2-inner h1 {
   margin-top: 0;
-  width: 62.4%;
   height: 60px;
   line-height: 0.8;
   letter-spacing: 0.034em;
-  text-align: right;
+  text-align: center;
   word-spacing: 1.1px;
   font-size: 3.6em;
 }
 
 .header-section-2-inner h2 {
   margin-top: -22px;
-  width: 62.2%;
   height: 41px;
   line-height: 0.7;
   text-align: center;
@@ -250,8 +247,10 @@ body {
 }
 
 .aside-social {
+  position: fixed;
+  right: 0px;
   padding-top: 9.5%;
-  width: 5%;
+  width: 4%;
 }
 
 .aside-social-list {
@@ -276,12 +275,12 @@ body {
   background: url("./assets/images/Layer_7@1X.png"),
     url("./assets/images/Layer_2@1X.png");
   background-repeat: repeat-x;
-  background-position: 10% -1482%, 0 97%;
+  background-position: 7% -2036%, 0 97%;
 }
 
 .header-section-3-inner {
   background: url("./assets/images/Layer_10@1X.png") no-repeat 50% 100%;
-  padding-top: 3.7%;
+  padding-top: 4.8%;
   width: 33.4%;
   height: 79px;
   margin: auto;
@@ -330,6 +329,7 @@ body {
 .main-conteiner-1 {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 15px;
   font-family: "TitilliumWeb-Regular", "MyriadPro-Regular";
   /* align-content: flex-start; */
   /* grid-template-rows: repeat(2,25%) */
