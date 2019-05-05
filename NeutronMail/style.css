@@ -101,14 +101,14 @@ button:focus {
 
 .header {
   background: url("./assets/images/Layer_2@1X.png"),
-    url("./assets/images/Layer_1new1_copy@1X.png");
+    url("./assets/images/Layer_1_@1X.png");
   background-repeat: no-repeat;
-  background-position: center 10%, 1px -175px;
+  background-position: center center, 0 -89px;
+  background-size: cover;
 }
 
 .header-section-1 {
   display: flex;
-  /* background-image: url("./assets/images/Layer_2@1X.png"); */
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -121,7 +121,6 @@ button:focus {
   align-items: flex-end;
   justify-content: flex-start;
   width: 50%;
-
   font-family: "TitilliumWeb-Bold", "MyriadPro-Regular";
   font-size: 1.9em;
   color: #797a79;
@@ -199,7 +198,6 @@ button:focus {
   overflow: hidden;
   max-width: 1400px;
   margin: 0 auto;
-  /* background-image: url("./assets/images/Layer_2@1X.png"); */
   font-family: "MyriadPro-Regular", "TitilliumWeb-Bold";
   font-size: 0.9em;
 }
@@ -248,7 +246,6 @@ button:focus {
   max-width: 1400px;
   margin: 0 auto;
   height: 275px;
-  /* background: url("./assets/images/Layer_2@1X.png") no-repeat 0% 20%; */
 }
 
 .header-section-2-inner {
@@ -314,9 +311,6 @@ button:focus {
 
 .header-section-3 {
   height: 472px;
-  background: url("./assets/images/Layer_7@1X.png");
-  background-repeat: no-repeat;
-  background-position: 1px 87px;
   width: 100%;
   overflow: hidden;
   max-width: 1800px;
@@ -793,15 +787,19 @@ blockquote cite {
 
 .container-4-label {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1439px;
+  align-items: flex-end;
 }
 
 .container-4-label p {
   font-family: "TitilliumWeb-Regular", "MyriadPro-Regular";
   margin-top: 21px;
   margin-bottom: 1px;
+  margin-right: 60px;
   width: 234px;
   height: 14px;
-  padding-left: 79.5%;
   line-height: 1;
   word-spacing: 0.5px;
   letter-spacing: 0.5px;
@@ -810,7 +808,6 @@ blockquote cite {
 
 .container-4-label .label {
   opacity: 0.3;
-  padding-left: 32.32%;
 }
 
 .container-4-label-line-1 {
@@ -829,9 +826,11 @@ blockquote cite {
 
 .footer-block {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
+  max-width: 1354px;
   overflow: hidden;
-  max-width: 1400px;
   margin: 0 auto;
   height: 228px;
   color: #676767;
@@ -847,7 +846,8 @@ blockquote cite {
 }
 
 .footer-line-1 {
-  margin-left: 4px;
+  position: absolute;
+  left: 200px;
   margin-top: 9px;
   width: 1px;
   height: 131px;
@@ -855,7 +855,7 @@ blockquote cite {
 }
 
 .footer-adress-1 {
-  margin: 0 0 0 19px;
+  margin: 0;
   width: 213px;
   height: 130px;
   font-family: "TitilliumWeb-Regular", "MyriadPro-Regular";
@@ -884,10 +884,17 @@ blockquote cite {
   text-decoration-color: #e2e2e2;
 }
 
+.footer-list-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 54%;
+}
+
 .footer-list-menu-1 {
-  margin-left: 414px;
   width: 74px;
   height: 152px;
+  margin-right: 14%;
 }
 
 .footer-list-menu-1 ul {
@@ -920,17 +927,17 @@ blockquote cite {
 }
 
 .footer-line-2 {
-  margin-left: 25px;
+  position: absolute;
+  left: 946px;
   background-color: #b9b9b9;
-  height: 441px;
+  height: 319px;
   width: 1px;
-  margin-bottom: -120px;
 }
 
 .footer-list-menu-2 {
-  margin-left: 69px;
   width: 155px;
   height: 155px;
+  margin-right: 11%;
 }
 
 .footer-list-menu-2 ul {
@@ -945,7 +952,6 @@ blockquote cite {
 }
 
 .footer-list-menu-3 {
-  margin-left: 79px;
   width: 123px;
   height: 152px;
 }
