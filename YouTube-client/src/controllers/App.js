@@ -1,6 +1,8 @@
 import AppModel from '../models/AppModel';
 import AppView from '../views/AppView/index';
 
+import SearchView from '../views/SearchView/index';
+
 export default class App {
   constructor() {
     this.state = {
@@ -14,8 +16,10 @@ export default class App {
     const model = new AppModel(this.state);
     const data = await model.getClipNames();
 
-    const view = new AppView(data);
+    const search = new SearchView();
+    search.render();
 
+    const view = new AppView(data);
     view.render();
   }
 }
