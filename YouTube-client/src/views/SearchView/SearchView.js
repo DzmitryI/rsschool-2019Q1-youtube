@@ -6,10 +6,11 @@ export default class SearchView {
   render() {
     const doc = document;
     const elem = doc.createElement('div');
+    elem.id = 'search-div';
     const input = doc.createElement('input');
     const button = doc.createElement('button');
     input.placeholder = 'Search Here';
-    input.id = 'search';
+    input.id = 'search-input';
     input.type = 'search';
     // input.value = this.search;
     button.type = 'submit';

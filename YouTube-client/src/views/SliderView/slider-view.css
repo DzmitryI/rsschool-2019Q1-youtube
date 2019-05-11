@@ -1,0 +1,39 @@
+#wrapper {
+  margin: 50px auto;
+  padding: 0;
+  width: 100%;
+
+  overflow-x: hidden;
+}
+
+ul {
+  display: flex;
+  --n: 1;
+  width: 100%;
+  width: calc(var(--n) * 100%);
+  padding: 0;
+  list-style-type: none;
+  transform: translate(calc(var(--i, 0) / var(--n) * -100%));
+  overflow-x: hidden;
+  transition: transform 0.5s ease-out;
+}
+
+li {
+  width: 360px;
+  height: 440px;
+  background: gold;
+  margin: 10px;
+}
+
+@media (max-width: 1024px) {
+  li {
+    width: 305px;
+    height: 336px;
+  }
+}
+@media (max-width: 780px) {
+  li {
+    width: 350px;
+    height: 440px;
+  }
+}

@@ -1,7 +1,9 @@
 import AppModel from '../models/AppModel';
-import AppView from '../views/AppView/index';
+// import AppView from '../views/AppView/index';
 
-import SearchView from '../views/SearchView/index';
+import SearchView from '../views/SearchView';
+
+import SliderView from '../views/SliderView';
 
 export default class App {
   constructor() {
@@ -19,7 +21,10 @@ export default class App {
     const search = new SearchView();
     search.render();
 
-    const view = new AppView(data);
-    view.render();
+    // const view = new AppView(data);
+    // view.render();
+
+    const slider = new SliderView(data);
+    slider.render();
   }
 }
