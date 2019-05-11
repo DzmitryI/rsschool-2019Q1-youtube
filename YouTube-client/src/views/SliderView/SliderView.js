@@ -14,7 +14,12 @@ export default class SliderView {
       .map(
         item => `<li><img src=${item.thumbnails.high.url}><p id='title'><span>${
           item.title
-        }</span></p><p>${item.publishedAt}</p><p>${item.description}</p></li>`,
+        }</span></p><p id='channel'>${
+          item.channelTitle
+        }</p><p id='data'>${item.publishedAt.slice(
+          0,
+          10,
+        )}</p><p id='description'>${item.description}</p></li>`,
       )
       .join('');
     content.style.setProperty('--n', N);

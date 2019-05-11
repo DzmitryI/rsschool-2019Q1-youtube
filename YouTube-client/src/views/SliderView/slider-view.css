@@ -1,8 +1,61 @@
+@font-face {
+  font-family: "fontello";
+  src: url("../SliderView/font/fontello.eot?33220342");
+  src: url("../SliderView/font/fontello.eot?33220342#iefix")
+      format("embedded-opentype"),
+    url("../SliderView/font/fontello.woff2?33220342") format("woff2"),
+    url("../SliderView/font/fontello.woff?33220342") format("woff"),
+    url("../SliderView/font/fontello.ttf?33220342") format("truetype"),
+    url("../SliderView/font/fontello.svg?33220342#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+  content: "\e800";
+} /* '' */
+.icon-eye:before {
+  content: "\e801";
+} /* '' */
+.icon-calendar:before {
+  content: "\e802";
+} /* '' */
+.icon-person:before {
+  content: "\e803";
+} /* '' */
+
 #wrapper {
   margin: 50px auto;
   padding: 0;
   width: 100%;
-
   overflow-x: hidden;
 }
 
@@ -47,7 +100,42 @@ li {
 img {
   width: 100%;
   height: 200px;
-  margin-top: 10%;
+  margin-top: 15px;
+}
+
+#channel {
+  margin: 0;
+  width: 80%;
+  text-align: center;
+}
+
+#channel::before {
+  display: block;
+  float: left;
+  content: "\e803";
+  text-align: center;
+  font-family: "fontello";
+  color: rgb(202, 195, 195);
+  font-size: 20px;
+}
+
+#data {
+  margin: 5px 0;
+  width: 84%;
+  text-align: center;
+}
+
+#data::before {
+  display: block;
+  float: left;
+  content: "\e802";
+  font-family: "fontello";
+  color: rgb(202, 195, 195);
+  font-size: 20px;
+}
+
+#description {
+  width: 90%;
 }
 
 @media (max-width: 1024px) {
