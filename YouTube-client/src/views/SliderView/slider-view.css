@@ -19,21 +19,46 @@ ul {
 }
 
 li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 360px;
   height: 440px;
   background: gold;
   margin: 10px;
+  border-radius: 11px;
+}
+
+#title {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -160px;
+  background-color: aqua;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  margin-top: 10%;
 }
 
 @media (max-width: 1024px) {
   li {
     width: 305px;
-    height: 336px;
+    /* height: 336px; */
   }
 }
 @media (max-width: 780px) {
   li {
     width: 350px;
-    height: 440px;
+    /* height: 440px; */
   }
 }

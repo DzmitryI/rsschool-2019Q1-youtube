@@ -3,8 +3,8 @@ export default class AppModel {
     this.state = state;
   }
 
-  static extractClipNamas(data) {
-    return data.items.map(clip => clip.snippet.title);
+  static extractSnippet(data) {
+    return data.items.map(clip => clip.snippet);
   }
 
   async getClipNames() {
@@ -12,8 +12,8 @@ export default class AppModel {
 
     const responce = await fetch(url);
     const data = await responce.json();
-
-    return AppModel.extractClipNamas(data);
+    console.log(data);
+    return AppModel.extractSnippet(data);
     // fetch(url)
     //   .then(res => res.json())
     //   .then(res => console.log(res));

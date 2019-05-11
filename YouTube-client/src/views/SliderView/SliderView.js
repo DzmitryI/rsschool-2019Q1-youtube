@@ -1,17 +1,23 @@
 export default class SliderView {
-  constructor(titles) {
-    this.titles = titles;
+  constructor(snippet) {
+    this.snippet = snippet;
   }
 
   render() {
     const doc = document;
     const elem = doc.createElement('div');
+    // const img = doc.createElement('img');
     elem.id = 'wrapper';
     const content = document.createElement('ul');
-    const N = this.titles.length;
-    content.innerHTML = this.titles.map(title => `<li>${title}</li>`).join('');
-    content.style.setProperty('--n', this.titles.length);
-
+    const N = this.snippet.length;
+    content.innerHTML = this.snippet
+      .map(
+        item => `<li><img src=${item.thumbnails.high.url}><p id='title'><span>${
+          item.title
+        }</span></p><p>${item.publishedAt}</p><p>${item.description}</p></li>`,
+      )
+      .join('');
+    content.style.setProperty('--n', N);
     let x0 = null;
     function unify(e) {
       return e.changedTouches ? e.changedTouches[0] : e;
