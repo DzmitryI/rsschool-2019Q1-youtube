@@ -12,19 +12,18 @@ export default class SliderView {
     const N = this.snippet.items.length;
     content.innerHTML = this.snippet.items
       .map(
-        item =>
-          `<li><img src=${
-            item.snippet.thumbnails.high.url
-          }><p id='title'><a href='https://www.youtube.com/watch?v=${
-            item.id
-          }' target="_blank">${item.snippet.title}</a></p><p id='channel'>${
-            item.snippet.channelTitle
-          }</p><p id='data'>${item.snippet.publishedAt.slice(
-            0,
-            10
-          )}</p><p id='eye'>${
-            item.statistics.viewCount
-          }</p><p id='description'>${item.snippet.description}</p></li>`
+        item => `<li><img src=${
+          item.snippet.thumbnails.high.url
+        }><p id='title'><a href='https://www.youtube.com/watch?v=${
+          item.id
+        }' target="_blank">${item.snippet.title}</a></p><p id='channel'>${
+          item.snippet.channelTitle
+        }</p><p id='data'>${item.snippet.publishedAt.slice(
+          0,
+          10,
+        )}</p><p id='eye'>${
+          item.statistics.viewCount
+        }</p><p id='description'>${item.snippet.description}</p></li>`,
       )
       .join('');
     content.style.setProperty('--n', N);

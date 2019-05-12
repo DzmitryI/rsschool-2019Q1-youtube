@@ -1,4 +1,11 @@
 @font-face {
+  font-family: "Lato";
+  src: url("../SliderView/font/Lato-Regular.ttf") format("truetype"),
+    url("../SliderView/font/Lato-Italic.ttf") format("truetype"),
+    url("../SliderView/font/Lato-Bold.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "fontello";
   src: url("../SliderView/font/fontello.eot?33220342");
   src: url("../SliderView/font/fontello.eot?33220342#iefix")
@@ -60,6 +67,7 @@
 }
 
 ul {
+  font-family: "Lato", sans-serif;
   display: flex;
   --n: 1;
   width: 100%;
@@ -78,7 +86,7 @@ li {
   align-items: center;
   width: 360px;
   height: 440px;
-  background: gold;
+  background: rgb(245, 244, 240);
   margin: 10px;
   border-radius: 11px;
 }
@@ -91,14 +99,15 @@ li {
   align-items: center;
   position: relative;
   top: -160px;
-  background-color: aqua;
+  background-color: rgb(17, 95, 238);
   width: 100%;
   height: 10%;
   text-align: center;
 }
 
 a {
-  text-decoration: none;
+  font-weight: bold;
+  color: rgb(255, 253, 253);
 }
 
 img {
@@ -159,6 +168,8 @@ img {
   height: 120px;
   margin: 5px 0;
   overflow: hidden;
+  font-style: italic;
+  font-size: 15px;
 }
 
 @media (max-width: 1024px) {
