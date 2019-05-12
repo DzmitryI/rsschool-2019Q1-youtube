@@ -9,17 +9,20 @@ export default class SliderView {
     // const img = doc.createElement('img');
     elem.id = 'wrapper';
     const content = document.createElement('ul');
-    const N = this.snippet.length;
-    content.innerHTML = this.snippet
+    const N = this.snippet.items.length;
+    content.innerHTML = this.snippet.items
       .map(
-        item => `<li><img src=${item.thumbnails.high.url}><p id='title'><span>${
-          item.title
-        }</span></p><p id='channel'>${
-          item.channelTitle
-        }</p><p id='data'>${item.publishedAt.slice(
-          0,
-          10,
-        )}</p><p id='description'>${item.description}</p></li>`,
+        item =>
+          `<li><img src=${
+            item.snippet.thumbnails.high.url
+          }><p id='title'><span>${item.title}</span></p><p id='channel'>${
+            item.snippet.channelTitle
+          }</p><p id='data'>${item.snippet.publishedAt.slice(
+            0,
+            10
+          )}</p><p id='eye'>${
+            item.statistics.viewCount
+          }</p><p id='description'>${item.snippet.description}</p></li>`
       )
       .join('');
     content.style.setProperty('--n', N);

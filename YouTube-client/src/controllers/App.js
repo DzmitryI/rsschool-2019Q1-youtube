@@ -1,5 +1,5 @@
 import AppModel from '../models/AppModel';
-// import AppView from '../views/AppView/index';
+import AppVideoId from '../models/AppVideoId';
 
 import SearchView from '../views/SearchView';
 
@@ -15,15 +15,20 @@ export default class App {
 
   async start() {
     const model = new AppModel(this.state);
-    const data = await model.getClipNames();
+    const data = await model.getData();
 
+    const modelVideoId = new AppVideoId(data);
+    const response = modelVideoId.extractVideoId();
+
+    const modelStatistic = new AppModel(response);
+    const dataStatistic = await modelStatistic.getData();
     const search = new SearchView();
     search.render();
 
     // const view = new AppView(data);
     // view.render();
 
-    const slider = new SliderView(data);
+    const slider = new SliderView(dataStatistic);
     slider.render();
   }
 }

@@ -105,6 +105,7 @@ img {
 
 #channel {
   margin: 0;
+  margin-top: -30px;
   width: 80%;
   text-align: center;
 }
@@ -134,8 +135,26 @@ img {
   font-size: 20px;
 }
 
+#eye {
+  margin: 0;
+  width: 84%;
+  text-align: center;
+}
+
+#eye::before {
+  display: block;
+  float: left;
+  content: "\e801";
+  font-family: "fontello";
+  color: rgb(202, 195, 195);
+  font-size: 20px;
+}
+
 #description {
   width: 90%;
+  height: 120px;
+  margin: 5px 0;
+  overflow: hidden;
 }
 
 @media (max-width: 1024px) {
