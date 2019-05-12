@@ -15,7 +15,9 @@ export default class SliderView {
         item =>
           `<li><img src=${
             item.snippet.thumbnails.high.url
-          }><p id='title'><span>${item.title}</span></p><p id='channel'>${
+          }><p id='title'><a href='https://www.youtube.com/watch?v=${
+            item.id
+          }' target="_blank">${item.snippet.title}</a></p><p id='channel'>${
             item.snippet.channelTitle
           }</p><p id='data'>${item.snippet.publishedAt.slice(
             0,
