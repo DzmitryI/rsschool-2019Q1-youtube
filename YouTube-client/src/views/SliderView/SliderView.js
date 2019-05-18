@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 export default class SliderView {
   constructor(snippet) {
     this.snippet = snippet;
@@ -5,6 +6,8 @@ export default class SliderView {
 
   render() {
     const doc = document;
+    const wrapper = doc.getElementById('wrapper');
+    if (wrapper !== null) wrapper.parentNode.removeChild(wrapper);
     const elem = doc.createElement('div');
     // const img = doc.createElement('img');
     elem.id = 'wrapper';
@@ -14,23 +17,24 @@ export default class SliderView {
       .map(
         item => `<li><img src=${
           item.snippet.thumbnails.high.url
-        }><p id='title'><a href='https://www.youtube.com/watch?v=${
+          }><p id='title'><a href='https://www.youtube.com/watch?v=${
           item.id
-        }' target="_blank">${item.snippet.title}</a></p><p id='channel'>${
+          }' target="_blank">${item.snippet.title}</a></p><p id='channel'>${
           item.snippet.channelTitle
-        }</p><p id='data'>${item.snippet.publishedAt.slice(
-          0,
-          10,
-        )}</p><p id='eye'>${
+          }</p><p id='data'>${item.snippet.publishedAt.slice(
+            0, 10,
+          )}</p><p id='eye'>${
           item.statistics.viewCount
-        }</p><p id='description'>${item.snippet.description}</p></li>`,
+          }</p><p id='description'>${item.snippet.description}</p></li>`,
       )
       .join('');
     content.style.setProperty('--n', N);
     let x0 = null;
+
     function unify(e) {
       return e.changedTouches ? e.changedTouches[0] : e;
     }
+
     function lock(e) {
       x0 = unify(e).clientX;
     }

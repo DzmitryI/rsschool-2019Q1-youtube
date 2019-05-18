@@ -16,7 +16,8 @@
   "author": "Dzmitry Ivanou <3prn@mail.ru>",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "ws": "^7.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
