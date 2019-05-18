@@ -27,13 +27,14 @@ module.exports = {
         loader: 'style-loader!css-loader!sass-loader'
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        // test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(jpg|jpeg|gif|png|woff|woff2|eot|ttf|svg)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'fonts/'
+              outputPath: 'assets/'
             }
           }
         ]

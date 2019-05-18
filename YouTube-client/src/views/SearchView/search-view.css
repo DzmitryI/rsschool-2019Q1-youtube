@@ -1,5 +1,13 @@
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../assets/font/Roboto-Regular.ttf") format("truetype");
+}
+
 body {
-  background: rgb(201, 196, 196);
+  background: #e3e3e3;
+  background-image: url('../assets/images/YouTube.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 #search-div {
@@ -19,7 +27,8 @@ input {
   height: 42px;
   padding-left: 42px;
   border: 2px solid rgb(48, 40, 40);
-  padding-left: 35px;
+  font-family: "Roboto-Regular";
+  font-size: 18px;
 }
 
 button {
@@ -37,5 +46,9 @@ button::before {
   content: "\e800";
   font-family: "fontello";
   color: rgb(48, 40, 40);
-  font-size: 20px;
+  font-size: 18px;
+}
+
+button:hover {
+  font-size: 22px;
 }

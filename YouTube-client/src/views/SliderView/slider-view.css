@@ -1,19 +1,27 @@
 @font-face {
-  font-family: "Lato";
-  src: url("../SliderView/font/Lato-Regular.ttf") format("truetype"),
-    url("../SliderView/font/Lato-Italic.ttf") format("truetype"),
-    url("../SliderView/font/Lato-Bold.ttf") format("truetype");
+  font-family: "Roboto-Bold";
+  src: url("..//assets/font/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Italic";
+  src: url("../assets/font/Roboto-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../assets/font/Roboto-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "fontello";
-  src: url("../SliderView/font/fontello.eot?33220342");
-  src: url("../SliderView/font/fontello.eot?33220342#iefix")
+  src: url("..//assets/font/fontello.eot?33220342");
+  src: url("..//assets/font/fontello.eot?33220342#iefix")
       format("embedded-opentype"),
-    url("../SliderView/font/fontello.woff2?33220342") format("woff2"),
-    url("../SliderView/font/fontello.woff?33220342") format("woff"),
-    url("../SliderView/font/fontello.ttf?33220342") format("truetype"),
-    url("../SliderView/font/fontello.svg?33220342#fontello") format("svg");
+    url("..//assets/font/fontello.woff2?33220342") format("woff2"),
+    url("..//assets/font/fontello.woff?33220342") format("woff"),
+    url("..//assets/font/fontello.ttf?33220342") format("truetype"),
+    url("..//assets/font/fontello.svg?33220342#fontello") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -67,7 +75,7 @@
 }
 
 ul {
-  font-family: "Lato", sans-serif;
+  font-family: 'Roboto-Regular', sans-serif;
   display: flex;
   --n: 1;
   width: 100%;
@@ -107,7 +115,7 @@ li {
 }
 
 a {
-  font-weight: bold;
+  font-family: 'Roboto-Bold';
   color: rgb(255, 253, 253);
 }
 
@@ -169,8 +177,9 @@ img {
   height: 120px;
   margin: 5px 0;
   overflow: hidden;
+  font-family: 'Roboto-Italic';
   font-style: italic;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 @media (max-width: 1024px) {

@@ -9,7 +9,6 @@ export default class AppModel {
 
   async getData() {
     const { url } = this.state;
-
     const responce = await fetch(url);
     const data = await responce.json();
     // console.log(data);

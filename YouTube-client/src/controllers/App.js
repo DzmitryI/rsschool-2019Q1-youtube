@@ -1,9 +1,7 @@
 import AppModel from '../models/AppModel';
 import AppVideoId from '../models/AppVideoId';
-
 // eslint-disable-next-line import/no-cycle
 import SearchView from '../views/SearchView';
-
 import SliderView from '../views/SliderView';
 
 export default class App {
@@ -15,7 +13,6 @@ export default class App {
     this.search = search;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async addTodo() {
     console.log(this.search);
     const modelSearch = new AppVideoId(this.search);
@@ -29,26 +26,26 @@ export default class App {
 
     const modelStatistic = new AppModel(response);
     const dataStatistic = await modelStatistic.getData();
-    // const search = new SearchView();
-    // search.render();
+
     const slider = new SliderView(dataStatistic);
     slider.render();
   }
 
-  async start() {
-    const model = new AppModel(this.state);
-    const data = await model.getData();
+  // eslint-disable-next-line class-methods-use-this
+  start() {
+    // const model = new AppModel(this.state);
+    // const data = await model.getData();
 
-    const modelVideoId = new AppVideoId(data);
-    const response = modelVideoId.extractVideoId();
+    // const modelVideoId = new AppVideoId(data);
+    // const response = modelVideoId.extractVideoId();
 
-    const modelStatistic = new AppModel(response);
-    const dataStatistic = await modelStatistic.getData();
+    // const modelStatistic = new AppModel(response);
+    // const dataStatistic = await modelStatistic.getData();
     const search = new SearchView();
     search.render();
     // this.onClickGetButton = search.onClickGetButton;
 
-    const slider = new SliderView(dataStatistic);
-    slider.render();
+    // const slider = new SliderView(dataStatistic);
+    // slider.render();
   }
 }
