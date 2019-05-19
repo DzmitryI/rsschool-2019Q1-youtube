@@ -69,9 +69,8 @@
 
 #SliderView {
   margin: auto;
-  max-width: 1447px;
+  max-width: 1440px;
   padding: 0;
-  /* width: 100%; */
   overflow: hidden;
 }
 
@@ -202,31 +201,19 @@ img:hover {
 }
 
 @media (max-width: 1430px) {
-  #wrapper {
-    max-width: 1100px;
-  }
-
-  li {
-    /* width: 305px; */
-    /* height: 336px; */
+  #SliderView {
+    max-width: 1080px;
   }
 }
+
 @media (max-width: 1070px) {
-  #wrapper {
-    max-width: 740px;
-  }
-  li {
-    /* width: 350px; */
-    /* height: 440px; */
+  #SliderView {
+    max-width: 720px;
   }
 }
 
 @media (max-width: 720px) {
-  #wrapper {
+  #SliderView {
     max-width: 360px;
-  }
-  li {
-    /* width: 350px; */
-    /* height: 440px; */
   }
 }

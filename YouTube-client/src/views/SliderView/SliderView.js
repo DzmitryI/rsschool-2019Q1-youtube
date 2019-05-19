@@ -9,7 +9,7 @@ export default class SliderView {
     this.nextPageToken = nextPageToken;
   }
 
-  nextPage() {
+  nextRequest() {
     const content = this.form.getElementById('list');
     for (let i = 0; i < this.snippet.items.length; i += 1) {
       const newLi = document.createElement('li');
@@ -28,6 +28,45 @@ export default class SliderView {
     }
   }
 
+  firstPage() {
+    const content = this.form.getElementById('list');
+    content.style.setProperty('--i', 0);
+    const carrentButton = this.form.getElementById('buttonCarrentPage');
+    carrentButton.value = 1;
+    const buttonFirstPage = this.form.getElementById('buttonFirstPage');
+    const buttonPrevPage = this.form.getElementById('buttonPrevPage');
+    buttonFirstPage.style.visibility = 'hidden';
+    buttonPrevPage.style.visibility = 'hidden';
+  }
+
+  PrevPage() {
+    const carrentButton = this.form.getElementById('buttonCarrentPage');
+    const content = this.form.getElementById('list');
+    const { value } = carrentButton;
+    if (Number(value) - 1 === 1) {
+      const buttonFirstPage = this.form.getElementById('buttonFirstPage');
+      const buttonPrevPage = this.form.getElementById('buttonPrevPage');
+      buttonFirstPage.style.visibility = 'hidden';
+      buttonPrevPage.style.visibility = 'hidden';
+    }
+    content.style.setProperty('--i', Number(value) - 2);
+    carrentButton.value = Number(value) - 1;
+  }
+
+  NextPage() {
+    const carrentButton = this.form.getElementById('buttonCarrentPage');
+    const content = this.form.getElementById('list');
+    const { value } = carrentButton;
+    if (Number(value) === 1) {
+      const buttonFirstPage = this.form.getElementById('buttonFirstPage');
+      const buttonPrevPage = this.form.getElementById('buttonPrevPage');
+      buttonFirstPage.style.visibility = 'visible';
+      buttonPrevPage.style.visibility = 'visible';
+    }
+    content.style.setProperty('--i', value);
+    carrentButton.value = Number(value) + 1;
+  }
+
   render() {
     const wrapper = this.form.getElementById('SliderView');
     if (wrapper) wrapper.parentElement.removeChild(wrapper);
@@ -35,8 +74,7 @@ export default class SliderView {
     elem.id = 'SliderView';
     const content = document.createElement('ul');
     content.id = 'list';
-    // eslint-disable-next-line prefer-destructuring
-    const nextPageToken = this.nextPageToken;
+    const { nextPageToken } = this;
     let N = this.snippet.items.length;
     content.innerHTML = this.snippet.items
       .map(
@@ -68,7 +106,6 @@ export default class SliderView {
 
     function move(e) {
       const widthWrapper = this.parentNode.offsetWidth;
-      // eslint-disable-next-line max-len
       N = this.children.length;
       let count = 0;
       if (widthWrapper >= 1430) count = 4;
@@ -84,12 +121,23 @@ export default class SliderView {
       if (x0 || x0 === 0) {
         const dx = unify(e).clientX - x0;
         const s = Math.sign(dx);
-
+        const carrentButton = document.getElementById('buttonCarrentPage');
+        if (i !== Number(carrentButton.value) - 1) i = Number(carrentButton.value) - 1;
         if ((i > 0 || s < 0) && (i < N - 1 || s > 0)) {
           content.style.setProperty('--i', (i -= s));
         }
-        const carrentButton = document.getElementById('buttonCarrentPage');
         carrentButton.value = i + 1;
+        if (i > 0) {
+          const buttonFirstPage = document.getElementById('buttonFirstPage');
+          const buttonPrevPage = document.getElementById('buttonPrevPage');
+          buttonFirstPage.style.visibility = 'visible';
+          buttonPrevPage.style.visibility = 'visible';
+        } else {
+          const buttonFirstPage = document.getElementById('buttonFirstPage');
+          const buttonPrevPage = document.getElementById('buttonPrevPage');
+          buttonFirstPage.style.visibility = 'hidden';
+          buttonPrevPage.style.visibility = 'hidden';
+        }
         x0 = null;
       }
     }
@@ -110,7 +158,6 @@ export default class SliderView {
     content.addEventListener('mousemove', drag, false);
     content.addEventListener('touchmove', drag, false);
 
-    // this.titles.map(title => `<p>${title}</p>`).join('');
     elem.appendChild(content);
     this.form.body.appendChild(elem);
   }

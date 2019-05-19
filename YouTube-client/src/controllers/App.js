@@ -8,15 +8,11 @@ import ButtonView from '../views/ButtonView';
 
 export default class App {
   constructor(state) {
-    // this.state = {
-    //   url:
-    //     'https://www.googleapis.com/youtube/v3/search?key=AIzaSyDrnaIn3QeV0VRjaFqPtI9pentZEWQKFkA&type=video&part=snippet&maxResults=15&q=js',
-    // };
     this.search = state;
     this.nextPage = state;
   }
 
-  async addTodo() {
+  async addSearch() {
     const modelSearch = new AppVideoId(this.search);
     const responseSearch = modelSearch.extractSearch();
 
@@ -49,12 +45,26 @@ export default class App {
     const dataStatistic = await modelStatistic.getData();
 
     const slider = new SliderView(dataStatistic, data.nextPageToken);
-    slider.nextPage();
+    slider.nextRequest();
   }
 
-  // eslint-disable-next-line class-methods-use-this
   start() {
-    const search = new SearchView();
+    const search = new SearchView(this.form);
     search.render();
+  }
+
+  FirstPage() {
+    const slider = new SliderView(this.form);
+    slider.firstPage();
+  }
+
+  PrevPage() {
+    const slider = new SliderView(this.form);
+    slider.PrevPage();
+  }
+
+  NextPage() {
+    const slider = new SliderView(this.form);
+    slider.NextPage();
   }
 }

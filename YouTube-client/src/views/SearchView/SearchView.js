@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-cycle
 import App from '../../controllers/App';
 
 export default class SearchView {
@@ -35,6 +34,6 @@ export default class SearchView {
     event.preventDefault();
     const inputId = this.form.getElementById('searchInput');
     const appA = new App(inputId.value);
-    appA.addTodo();
+    appA.addSearch();
   }
 }

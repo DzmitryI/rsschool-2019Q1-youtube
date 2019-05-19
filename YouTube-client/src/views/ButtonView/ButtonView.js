@@ -1,3 +1,5 @@
+import App from '../../controllers/App';
+
 export default class ButtonView {
   constructor() {
     this.form = document;
@@ -9,40 +11,60 @@ export default class ButtonView {
     const buttonFirstPage = this.form.createElement('input');
     buttonFirstPage.type = 'button';
     buttonFirstPage.id = 'buttonFirstPage';
+    buttonFirstPage.value = '1';
+    buttonFirstPage.style.visibility = 'hidden';
     elem.appendChild(buttonFirstPage);
 
     const PrevButton = this.form.createElement('input');
     PrevButton.type = 'button';
     PrevButton.id = 'buttonPrevPage';
+    PrevButton.style.visibility = 'hidden';
     elem.appendChild(PrevButton);
 
     const carrentButton = this.form.createElement('input');
     carrentButton.type = 'button';
     carrentButton.id = 'buttonCarrentPage';
     carrentButton.value = '1';
+    carrentButton.disabled = true;
     elem.appendChild(carrentButton);
 
     const NextButton = this.form.createElement('input');
     NextButton.type = 'button';
     NextButton.id = 'buttonNextPage';
     elem.appendChild(NextButton);
-    // elem.appendChild(input);
-    // input.innerHTML = this.serch;
+
     this.form.body.appendChild(elem);
 
-    // return this.addEventListeners(elem);
+    return this.addEventListeners(elem);
   }
 
-  // addEventListeners(item) {
-  //   const buttonId = item.childNodes[0];
-  //   buttonId.addEventListener('click', this.handleAdd.bind(this));
-  //   return item;
-  // }
+  addEventListeners(item) {
+    const buttonFirstPage = this.form.getElementById('buttonFirstPage');
+    buttonFirstPage.addEventListener('click', this.FirstPage.bind(this));
 
-  // handleAdd(event) {
-  //   event.preventDefault();
-  //   const inputId = this.form.getElementById('search-id');
-  //   const appA = new App(inputId.value);
-  //   appA.addTodo();
-  // }
+    const buttonPrevPage = this.form.getElementById('buttonPrevPage');
+    buttonPrevPage.addEventListener('click', this.PrevPage.bind(this));
+
+    const buttonNextPage = this.form.getElementById('buttonNextPage');
+    buttonNextPage.addEventListener('click', this.NextPage.bind(this));
+    return item;
+  }
+
+  FirstPage(event) {
+    event.preventDefault();
+    const appA = new App(this.form);
+    appA.FirstPage();
+  }
+
+  PrevPage(event) {
+    event.preventDefault();
+    const appA = new App(this.form);
+    appA.PrevPage();
+  }
+
+  NextPage(event) {
+    event.preventDefault();
+    const appA = new App(this.form);
+    appA.NextPage();
+  }
 }
