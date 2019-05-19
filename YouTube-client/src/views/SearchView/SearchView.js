@@ -8,14 +8,15 @@ export default class SearchView {
 
   render() {
     const elem = this.form.createElement('div');
-    elem.id = 'search-div';
+    elem.id = 'searchConteiner';
     const input = this.form.createElement('input');
     const button = this.form.createElement('button');
     input.placeholder = 'Search Here';
-    input.id = 'search-id';
+    input.id = 'searchInput';
     input.type = 'search';
-    button.type = 'submit';
-    button.id = 'button-id';
+    button.type = 'button';
+    button.id = 'searchButton';
+    button.accessKey = '13';
     elem.appendChild(button);
     elem.appendChild(input);
     input.innerHTML = this.serch;
@@ -32,7 +33,7 @@ export default class SearchView {
 
   handleAdd(event) {
     event.preventDefault();
-    const inputId = this.form.getElementById('search-id');
+    const inputId = this.form.getElementById('searchInput');
     const appA = new App(inputId.value);
     appA.addTodo();
   }

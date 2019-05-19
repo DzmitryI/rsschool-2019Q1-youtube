@@ -29,10 +29,10 @@ export default class SliderView {
   }
 
   render() {
-    const wrapper = this.form.getElementById('wrapper');
+    const wrapper = this.form.getElementById('SliderView');
     if (wrapper) wrapper.parentElement.removeChild(wrapper);
     const elem = this.form.createElement('div');
-    elem.id = 'wrapper';
+    elem.id = 'SliderView';
     const content = document.createElement('ul');
     content.id = 'list';
     // eslint-disable-next-line prefer-destructuring
@@ -88,7 +88,8 @@ export default class SliderView {
         if ((i > 0 || s < 0) && (i < N - 1 || s > 0)) {
           content.style.setProperty('--i', (i -= s));
         }
-
+        const carrentButton = document.getElementById('buttonCarrentPage');
+        carrentButton.value = i + 1;
         x0 = null;
       }
     }

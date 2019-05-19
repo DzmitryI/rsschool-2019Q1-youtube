@@ -10,19 +10,19 @@ body {
   background-repeat: no-repeat;
 }
 
-#search-div {
+#searchConteiner {
   position: relative;
   width: 70%;
   margin: 20px auto;
 }
 
-input,
-button {
+#searchInput,
+#searchButton {
   outline: none;
   border-radius: 5px;
 }
 
-input {
+#searchInput {
   width: 100%;
   height: 42px;
   padding-left: 42px;
@@ -31,7 +31,11 @@ input {
   font-size: 18px;
 }
 
-button {
+#searchInput:hover {
+  background-color: rgb(28, 218, 53);
+}
+
+#searchButton {
   position: absolute;
   top: 8px;
   left: 8px;
@@ -42,13 +46,13 @@ button {
   cursor: pointer;
 }
 
-button::before {
+#searchButton::before {
   content: "\e800";
   font-family: "fontello";
   color: rgb(48, 40, 40);
   font-size: 18px;
 }
 
-button:hover {
+#searchButton:hover {
   font-size: 22px;
 }

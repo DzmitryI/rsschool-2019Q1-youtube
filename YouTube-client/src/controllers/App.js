@@ -4,6 +4,7 @@ import AppVideoId from '../models/AppVideoId';
 import SearchView from '../views/SearchView';
 // eslint-disable-next-line import/no-cycle
 import SliderView from '../views/SliderView';
+import ButtonView from '../views/ButtonView';
 
 export default class App {
   constructor(state) {
@@ -30,6 +31,9 @@ export default class App {
 
     const slider = new SliderView(dataStatistic, data.nextPageToken);
     slider.render();
+
+    const buttonView = new ButtonView();
+    buttonView.render();
   }
 
   async NextToken() {

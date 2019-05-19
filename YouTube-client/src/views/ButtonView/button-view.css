@@ -1,0 +1,48 @@
+#buttonConteiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  margin: 0 auto;
+  border: 1px solid black;
+  width: 150px;
+}
+
+#buttonCarrentPage {
+  margin: auto 10px;
+  border-radius: 50%;
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background-color: rgb(185, 61, 61);
+  color: black;
+  cursor: pointer;
+}
+
+#buttonFirstPage {
+  margin-right: 10px;
+}
+
+#buttonFirstPage,
+#buttonPrevPage,
+#buttonNextPage {
+  display: flex;
+  padding: 0;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background-color: rgb(211, 147, 147);
+  color: black;
+  cursor: pointer;
+  transition-duration: 3s;
+  transition-property: color;
+}
+
+#buttonFirstPage:hover,
+#buttonPrevPage:hover,
+#buttonNextPage:hover {
+  background-color: rgb(112, 248, 33);
+}
