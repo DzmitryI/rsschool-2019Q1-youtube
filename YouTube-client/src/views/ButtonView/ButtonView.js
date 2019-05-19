@@ -1,8 +1,9 @@
 import App from '../../controllers/App';
 
 export default class ButtonView {
-  constructor() {
+  constructor(nextPageToken) {
     this.form = document;
+    this.nextPageToken = nextPageToken;
   }
 
   render() {
@@ -31,6 +32,7 @@ export default class ButtonView {
     const NextButton = this.form.createElement('input');
     NextButton.type = 'button';
     NextButton.id = 'buttonNextPage';
+    NextButton.name = this.nextPageToken;
     elem.appendChild(NextButton);
 
     this.form.body.appendChild(elem);

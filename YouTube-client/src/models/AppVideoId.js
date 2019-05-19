@@ -1,6 +1,7 @@
 export default class AppVideoId {
-  constructor(data) {
+  constructor(data, value) {
     this.data = data;
+    this.value = value;
   }
 
   extractVideoId() {
@@ -17,10 +18,9 @@ export default class AppVideoId {
     };
   }
 
-  extractNextPege() {
-    // const search = this.data;
+  extractNextPage() {
     return {
-      url: `https://www.googleapis.com/youtube/v3/search?key=AIzaSyDrnaIn3QeV0VRjaFqPtI9pentZEWQKFkA&type=video&part=snippet&maxResults=15&pageToken=${this.data}`,
+      url: `https://www.googleapis.com/youtube/v3/search?key=AIzaSyDrnaIn3QeV0VRjaFqPtI9pentZEWQKFkA&type=video&part=snippet&maxResults=15&q=${this.value}&pageToken=${this.data}`,
     };
   }
 }

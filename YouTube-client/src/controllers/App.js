@@ -9,13 +9,13 @@ import ButtonView from '../views/ButtonView';
 export default class App {
   constructor(state) {
     this.search = state;
-    this.nextPage = state;
+    this.form = document;
   }
+
 
   async addSearch() {
     const modelSearch = new AppVideoId(this.search);
     const responseSearch = modelSearch.extractSearch();
-
     const model = new AppModel(responseSearch);
     const data = await model.getData();
 
@@ -25,26 +25,29 @@ export default class App {
     const modelStatistic = new AppModel(response);
     const dataStatistic = await modelStatistic.getData();
 
-    const slider = new SliderView(dataStatistic, data.nextPageToken);
+    const slider = new SliderView(dataStatistic);
     slider.render();
 
-    const buttonView = new ButtonView();
+    const buttonView = new ButtonView(data.nextPageToken);
     buttonView.render();
   }
 
   async NextToken() {
-    const modelSearch = new AppVideoId(this.nextPage);
-    const responseSearch = modelSearch.extractNextPege();
+    const { value } = this.form.getElementById('searchInput');
+    const buttonNextPage = this.form.getElementById('buttonNextPage');
+    const nextPageToken = buttonNextPage.name;
+    const modelSearch = new AppVideoId(nextPageToken, value);
+    const responseSearch = modelSearch.extractNextPage();
     const model = new AppModel(responseSearch);
     const data = await model.getData();
-
+    buttonNextPage.name = data.nextPageToken;
     const modelVideoId = new AppVideoId(data);
     const response = modelVideoId.extractVideoId();
 
     const modelStatistic = new AppModel(response);
     const dataStatistic = await modelStatistic.getData();
 
-    const slider = new SliderView(dataStatistic, data.nextPageToken);
+    const slider = new SliderView(dataStatistic);
     slider.nextRequest();
   }
 

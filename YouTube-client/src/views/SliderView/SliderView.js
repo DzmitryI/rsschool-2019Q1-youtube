@@ -1,12 +1,10 @@
-/* eslint-disable indent */
 // eslint-disable-next-line import/no-cycle
 import App from '../../controllers/App';
 
 export default class SliderView {
-  constructor(snippet, nextPageToken) {
+  constructor(snippet) {
     this.form = document;
     this.snippet = snippet;
-    this.nextPageToken = nextPageToken;
   }
 
   nextRequest() {
@@ -63,6 +61,19 @@ export default class SliderView {
       buttonFirstPage.style.visibility = 'visible';
       buttonPrevPage.style.visibility = 'visible';
     }
+
+    const widthWrapper = this.form.getElementById('SliderView').offsetWidth;
+    const N = content.children.length;
+    let count = 0;
+    if (widthWrapper >= 1430) count = 4;
+    else if (widthWrapper >= 1070) count = 3;
+    else if (widthWrapper >= 720) count = 2;
+    else count = 1;
+    const pageCount = Math.floor(N / count);
+    if (pageCount - Number(value) === 1) {
+      const appA = new App();
+      appA.NextToken();
+    }
     content.style.setProperty('--i', value);
     carrentButton.value = Number(value) + 1;
   }
@@ -74,7 +85,6 @@ export default class SliderView {
     elem.id = 'SliderView';
     const content = document.createElement('ul');
     content.id = 'list';
-    const { nextPageToken } = this;
     let N = this.snippet.items.length;
     content.innerHTML = this.snippet.items
       .map(
@@ -102,7 +112,6 @@ export default class SliderView {
       x0 = unify(e).clientX;
     }
     let i = 0;
-    let flagNewPage = false;
 
     function move(e) {
       const widthWrapper = this.parentNode.offsetWidth;
@@ -113,10 +122,9 @@ export default class SliderView {
       else if (widthWrapper >= 720) count = 2;
       else count = 1;
       const pageCount = Math.floor(N / count) - 1;
-      if ((pageCount - i === 1) && flagNewPage === false) {
-        const appA = new App(nextPageToken);
+      if (pageCount - i === 1) {
+        const appA = new App();
         appA.NextToken();
-        flagNewPage = true;
       }
       if (x0 || x0 === 0) {
         const dx = unify(e).clientX - x0;
