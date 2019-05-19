@@ -29,6 +29,8 @@ export default class SliderView {
   }
 
   render() {
+    const wrapper = this.form.getElementById('wrapper');
+    if (wrapper) wrapper.parentElement.removeChild(wrapper);
     const elem = this.form.createElement('div');
     elem.id = 'wrapper';
     const content = document.createElement('ul');
