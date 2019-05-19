@@ -43,7 +43,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'YouTube-client'
+      title: 'YouTube-client',
+      meta: { viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
     })
   ]
 };

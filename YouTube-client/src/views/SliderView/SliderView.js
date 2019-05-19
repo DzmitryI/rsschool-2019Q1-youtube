@@ -13,15 +13,15 @@ export default class SliderView {
       const newLi = document.createElement('li');
       newLi.innerHTML = `<img src=${
         this.snippet.items[i].snippet.thumbnails.high.url
-        }><p id='title'><a href='https://www.youtube.com/watch?v=${
+      }><p id='title'><a href='https://www.youtube.com/watch?v=${
         this.snippet.items[i].id
-        }' target="_blank">${this.snippet.items[i].snippet.title}</a></p><p id='channel'>${
+      }' target="_blank">${this.snippet.items[i].snippet.title}</a></p><p id='channel'>${
         this.snippet.items[i].snippet.channelTitle
-        }</p><p id='data'>${this.snippet.items[i].snippet.publishedAt.slice(
-          0, 10,
-        )}</p><p id='eye'>${
+      }</p><p id='data'>${this.snippet.items[i].snippet.publishedAt.slice(
+        0, 10,
+      )}</p><p id='eye'>${
         this.snippet.items[i].statistics.viewCount
-        }</p><p id='description'>${this.snippet.items[0].snippet.description}</p>`;
+      }</p><p id='description'>${this.snippet.items[0].snippet.description}</p>`;
       content.appendChild(newLi);
     }
   }
@@ -80,7 +80,9 @@ export default class SliderView {
 
   render() {
     const wrapper = this.form.getElementById('SliderView');
+    const buttonConteiner = this.form.getElementById('buttonConteiner');
     if (wrapper) wrapper.parentElement.removeChild(wrapper);
+    if (buttonConteiner) buttonConteiner.parentElement.removeChild(buttonConteiner);
     const elem = this.form.createElement('div');
     elem.id = 'SliderView';
     const content = document.createElement('ul');
@@ -90,15 +92,15 @@ export default class SliderView {
       .map(
         item => `<li><img src=${
           item.snippet.thumbnails.high.url
-          }><p id='title'><a href='https://www.youtube.com/watch?v=${
+        }><p id='title'><a href='https://www.youtube.com/watch?v=${
           item.id
-          }' target="_blank">${item.snippet.title}</a></p><p id='channel'>${
+        }' target="_blank">${item.snippet.title}</a></p><p id='channel'>${
           item.snippet.channelTitle
-          }</p><p id='data'>${item.snippet.publishedAt.slice(
-            0, 10,
-          )}</p><p id='eye'>${
+        }</p><p id='data'>${item.snippet.publishedAt.slice(
+          0, 10,
+        )}</p><p id='eye'>${
           item.statistics.viewCount
-          }</p><p id='description'>${item.snippet.description}</p></li>`,
+        }</p><p id='description'>${item.snippet.description}</p></li>`,
       )
       .join('');
     content.style.setProperty('--n', N);

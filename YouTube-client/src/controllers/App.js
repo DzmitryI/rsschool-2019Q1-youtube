@@ -1,9 +1,11 @@
+// eslint-disable-next-line import/no-cycle
 import AppModel from '../models/AppModel';
 import AppVideoId from '../models/AppVideoId';
 // eslint-disable-next-line import/no-cycle
 import SearchView from '../views/SearchView';
 // eslint-disable-next-line import/no-cycle
 import SliderView from '../views/SliderView';
+// eslint-disable-next-line import/no-cycle
 import ButtonView from '../views/ButtonView';
 
 export default class App {

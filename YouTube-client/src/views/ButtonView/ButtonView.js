@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import App from '../../controllers/App';
 
 export default class ButtonView {
