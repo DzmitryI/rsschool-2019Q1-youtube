@@ -7,11 +7,10 @@ export default class SearchView {
   }
 
   render() {
-    const doc = document;
-    const elem = doc.createElement('div');
+    const elem = this.form.createElement('div');
     elem.id = 'search-div';
-    const input = doc.createElement('input');
-    const button = doc.createElement('button');
+    const input = this.form.createElement('input');
+    const button = this.form.createElement('button');
     input.placeholder = 'Search Here';
     input.id = 'search-id';
     input.type = 'search';
@@ -20,7 +19,7 @@ export default class SearchView {
     elem.appendChild(button);
     elem.appendChild(input);
     input.innerHTML = this.serch;
-    doc.body.appendChild(elem);
+    this.form.body.appendChild(elem);
 
     return this.addEventListeners(elem);
   }

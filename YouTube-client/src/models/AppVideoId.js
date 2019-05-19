@@ -16,4 +16,11 @@ export default class AppVideoId {
       url: `https://www.googleapis.com/youtube/v3/search?key=AIzaSyDrnaIn3QeV0VRjaFqPtI9pentZEWQKFkA&type=video&part=snippet&maxResults=15&q=${search}`,
     };
   }
+
+  extractNextPege() {
+    // const search = this.data;
+    return {
+      url: `https://www.googleapis.com/youtube/v3/search?key=AIzaSyDrnaIn3QeV0VRjaFqPtI9pentZEWQKFkA&type=video&part=snippet&maxResults=15&pageToken=${this.data}`,
+    };
+  }
 }
