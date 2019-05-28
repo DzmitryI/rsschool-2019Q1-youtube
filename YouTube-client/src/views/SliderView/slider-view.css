@@ -102,7 +102,6 @@ li {
 
 li:hover {
   border-radius: 11px;
-  transform: scaleY(1.1);
   background-color: rgb(86, 248, 21);
 }
 

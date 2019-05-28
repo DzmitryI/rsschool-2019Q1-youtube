@@ -1,6 +1,3 @@
-// eslint-disable-next-line import/no-cycle
-import App from '../../controllers/App';
-
 export default class SliderView {
   constructor(snippet) {
     this.form = document;
@@ -62,18 +59,6 @@ export default class SliderView {
       buttonPrevPage.style.visibility = 'visible';
     }
 
-    const widthWrapper = this.form.getElementById('SliderView').offsetWidth;
-    this.N = content.children.length;
-    let count = 0;
-    if (widthWrapper >= 1430) count = 4;
-    else if (widthWrapper >= 1070) count = 3;
-    else if (widthWrapper >= 720) count = 2;
-    else count = 1;
-    const pageCount = Math.floor(this.N / count);
-    if (pageCount - Number(value) === 1) {
-      const appA = new App();
-      appA.NextToken();
-    }
     content.style.setProperty('--i', value);
     carrentButton.value = Number(value) + 1;
   }
@@ -116,18 +101,7 @@ export default class SliderView {
     let i = 0;
 
     function move(e) {
-      const widthWrapper = this.parentNode.offsetWidth;
       N = this.children.length;
-      let count = 0;
-      if (widthWrapper >= 1430) count = 4;
-      else if (widthWrapper >= 1070) count = 3;
-      else if (widthWrapper >= 720) count = 2;
-      else count = 1;
-      const pageCount = Math.floor(N / count) - 1;
-      if (pageCount - i === 1) {
-        const appA = new App();
-        appA.NextToken();
-      }
       if (x0 || x0 === 0) {
         const dx = unify(e).clientX - x0;
         const s = Math.sign(dx);
