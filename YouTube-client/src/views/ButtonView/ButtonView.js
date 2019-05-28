@@ -1,6 +1,3 @@
-// eslint-disable-next-line import/no-cycle
-import App from '../../controllers/App';
-
 export default class ButtonView {
   constructor(nextPageToken) {
     this.form = document;
@@ -37,37 +34,5 @@ export default class ButtonView {
     elem.appendChild(NextButton);
 
     this.form.body.appendChild(elem);
-
-    return this.addEventListeners(elem);
-  }
-
-  addEventListeners(item) {
-    const buttonFirstPage = this.form.getElementById('buttonFirstPage');
-    buttonFirstPage.addEventListener('click', this.FirstPage.bind(this));
-
-    const buttonPrevPage = this.form.getElementById('buttonPrevPage');
-    buttonPrevPage.addEventListener('click', this.PrevPage.bind(this));
-
-    const buttonNextPage = this.form.getElementById('buttonNextPage');
-    buttonNextPage.addEventListener('click', this.NextPage.bind(this));
-    return item;
-  }
-
-  FirstPage(event) {
-    event.preventDefault();
-    const appA = new App(this.form);
-    appA.FirstPage();
-  }
-
-  PrevPage(event) {
-    event.preventDefault();
-    const appA = new App(this.form);
-    appA.PrevPage();
-  }
-
-  NextPage(event) {
-    event.preventDefault();
-    const appA = new App(this.form);
-    appA.NextPage();
   }
 }

@@ -1,11 +1,8 @@
-// eslint-disable-next-line import/no-cycle
 import AppModel from '../models/AppModel';
 import AppVideoId from '../models/AppVideoId';
-// eslint-disable-next-line import/no-cycle
 import SearchView from '../views/SearchView';
 // eslint-disable-next-line import/no-cycle
 import SliderView from '../views/SliderView';
-// eslint-disable-next-line import/no-cycle
 import ButtonView from '../views/ButtonView';
 
 export default class App {
@@ -14,9 +11,9 @@ export default class App {
     this.form = document;
   }
 
-
   async addSearch() {
-    const modelSearch = new AppVideoId(this.search);
+    const inputId = this.form.getElementById('searchInput');
+    const modelSearch = new AppVideoId(inputId.value);
     const responseSearch = modelSearch.extractSearch();
     const model = new AppModel(responseSearch);
     const data = await model.getData();
@@ -32,6 +29,8 @@ export default class App {
 
     const buttonView = new ButtonView(data.nextPageToken);
     buttonView.render();
+    const buttonConteiner = this.form.getElementById('buttonConteiner');
+    buttonConteiner.addEventListener('click', this.clickPage.bind(this));
   }
 
   async NextToken() {
@@ -56,20 +55,14 @@ export default class App {
   start() {
     const search = new SearchView(this.form);
     search.render();
+    const searchButton = this.form.getElementById('searchButton');
+    searchButton.addEventListener('click', this.addSearch.bind(this));
   }
 
-  FirstPage() {
+  clickPage(event) {
     const slider = new SliderView(this.form);
-    slider.firstPage();
-  }
-
-  PrevPage() {
-    const slider = new SliderView(this.form);
-    slider.PrevPage();
-  }
-
-  NextPage() {
-    const slider = new SliderView(this.form);
-    slider.NextPage();
+    if (event.target.id === 'buttonNextPage') slider.NextPage();
+    else if (event.target.id === 'buttonFirstPage') slider.firstPage();
+    else if (event.target.id === 'buttonPrevPage') slider.PrevPage();
   }
 }

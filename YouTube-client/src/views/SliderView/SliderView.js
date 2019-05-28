@@ -63,13 +63,13 @@ export default class SliderView {
     }
 
     const widthWrapper = this.form.getElementById('SliderView').offsetWidth;
-    const N = content.children.length;
+    this.N = content.children.length;
     let count = 0;
     if (widthWrapper >= 1430) count = 4;
     else if (widthWrapper >= 1070) count = 3;
     else if (widthWrapper >= 720) count = 2;
     else count = 1;
-    const pageCount = Math.floor(N / count);
+    const pageCount = Math.floor(this.N / count);
     if (pageCount - Number(value) === 1) {
       const appA = new App();
       appA.NextToken();
