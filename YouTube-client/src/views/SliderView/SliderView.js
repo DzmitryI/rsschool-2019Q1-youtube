@@ -12,13 +12,18 @@ export default class SliderView {
         this.snippet.items[i].snippet.thumbnails.high.url
       }><p id='title'><a href='https://www.youtube.com/watch?v=${
         this.snippet.items[i].id
-      }' target="_blank">${this.snippet.items[i].snippet.title}</a></p><p id='channel'>${
+      }' target="_blank">${
+        this.snippet.items[i].snippet.title
+      }</a></p><p id='channel'>${
         this.snippet.items[i].snippet.channelTitle
       }</p><p id='data'>${this.snippet.items[i].snippet.publishedAt.slice(
-        0, 10,
+        0,
+        10,
       )}</p><p id='eye'>${
         this.snippet.items[i].statistics.viewCount
-      }</p><p id='description'>${this.snippet.items[0].snippet.description}</p>`;
+      }</p><p id='description'>${
+        this.snippet.items[0].snippet.description
+      }</p>`;
       content.appendChild(newLi);
     }
   }
@@ -67,7 +72,9 @@ export default class SliderView {
     const wrapper = this.form.getElementById('SliderView');
     const buttonConteiner = this.form.getElementById('buttonConteiner');
     if (wrapper) wrapper.parentElement.removeChild(wrapper);
-    if (buttonConteiner) buttonConteiner.parentElement.removeChild(buttonConteiner);
+    if (buttonConteiner) {
+      buttonConteiner.parentElement.removeChild(buttonConteiner);
+    }
     const elem = this.form.createElement('div');
     elem.id = 'SliderView';
     const content = document.createElement('ul');
@@ -82,7 +89,8 @@ export default class SliderView {
         }' target="_blank">${item.snippet.title}</a></p><p id='channel'>${
           item.snippet.channelTitle
         }</p><p id='data'>${item.snippet.publishedAt.slice(
-          0, 10,
+          0,
+          10,
         )}</p><p id='eye'>${
           item.statistics.viewCount
         }</p><p id='description'>${item.snippet.description}</p></li>`,
@@ -106,7 +114,9 @@ export default class SliderView {
         const dx = unify(e).clientX - x0;
         const s = Math.sign(dx);
         const carrentButton = document.getElementById('buttonCarrentPage');
-        if (i !== Number(carrentButton.value) - 1) i = Number(carrentButton.value) - 1;
+        if (i !== Number(carrentButton.value) - 1) {
+          i = Number(carrentButton.value) - 1;
+        }
         if ((i > 0 || s < 0) && (i < N - 1 || s > 0)) {
           content.style.setProperty('--i', (i -= s));
         }
@@ -129,7 +139,10 @@ export default class SliderView {
     function drag(e) {
       e.preventDefault();
       if (x0 || x0 === 0) {
-        content.style.setProperty('--tx', `${Math.round(unify(e).clientX - x0)}px`);
+        content.style.setProperty(
+          '--tx',
+          `${Math.round(unify(e).clientX - x0)}px`,
+        );
       }
     }
 
