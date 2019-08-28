@@ -1,0 +1,218 @@
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("..//assets/font/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Italic";
+  src: url("../assets/font/Roboto-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../assets/font/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "fontello";
+  src: url("..//assets/font/fontello.eot?33220342");
+  src: url("..//assets/font/fontello.eot?33220342#iefix")
+      format("embedded-opentype"),
+    url("..//assets/font/fontello.woff2?33220342") format("woff2"),
+    url("..//assets/font/fontello.woff?33220342") format("woff"),
+    url("..//assets/font/fontello.ttf?33220342") format("truetype"),
+    url("..//assets/font/fontello.svg?33220342#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+  content: "\e800";
+} /* '' */
+.icon-eye:before {
+  content: "\e801";
+} /* '' */
+.icon-calendar:before {
+  content: "\e802";
+} /* '' */
+.icon-person:before {
+  content: "\e803";
+} /* '' */
+
+#SliderView {
+  margin: auto;
+  max-width: 1440px;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul {
+  font-family: 'Roboto-Regular', sans-serif;
+  display: flex;
+  --n: 1;
+  width: 100%;
+  width: calc(var(--n) * 100%);
+  padding: 0;
+  list-style-type: none;
+  transform: translate(calc(var(--i, 0) / var(--n) * -100%));
+  /* transform: translate(calc(var(--i, 0)/var(--n)*-100% + var(--tx, 0px))); */
+  overflow-x: hidden;
+  transition: transform 0.5s ease-out;
+}
+
+li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 300px;
+  height: 440px;
+  background: rgb(245, 244, 240);
+  margin: 10px 30px;
+  border-radius: 11px;
+}
+
+li:hover {
+  border-radius: 11px;
+  background-color: rgb(86, 248, 21);
+}
+
+#title {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -175px;
+  background-color: rgb(17, 95, 238);
+  width: 100%;
+  height: 20%;
+  text-align: center;
+}
+
+a {
+  font-family: 'Roboto-Bold';
+  color: rgb(255, 253, 253);
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  margin-top: 15px;
+}
+
+img:hover {
+  width: 100%;
+  transform: skew(-5deg, 5deg);
+}
+
+#channel {
+  margin: 0;
+  margin-top: -60px;
+  width: 80%;
+  text-align: center;
+}
+
+#channel::before {
+  display: block;
+  float: left;
+  content: "\e803";
+  text-align: center;
+  font-family: "fontello";
+  color: rgb(202, 195, 195);
+  font-size: 20px;
+}
+
+#data {
+  margin: 5px 0;
+  width: 84%;
+  text-align: center;
+}
+
+#data::before {
+  display: block;
+  float: left;
+  content: "\e802";
+  font-family: "fontello";
+  color: rgb(202, 195, 195);
+  font-size: 20px;
+}
+
+#eye {
+  margin: 0;
+  width: 84%;
+  text-align: center;
+}
+
+#eye::before {
+  display: block;
+  float: left;
+  content: "\e801";
+  font-family: "fontello";
+  color: rgb(202, 195, 195);
+  font-size: 20px;
+}
+
+#description {
+  width: 90%;
+  height: 120px;
+  margin: 5px 0;
+  overflow: hidden;
+  font-family: 'Roboto-Italic';
+  font-style: italic;
+  font-size: 14px;
+}
+
+#channel, #data, #eye, #description {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (max-width: 1430px) {
+  #SliderView {
+    max-width: 1080px;
+  }
+}
+
+@media (max-width: 1070px) {
+  #SliderView {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 720px) {
+  #SliderView {
+    max-width: 360px;
+  }
+}

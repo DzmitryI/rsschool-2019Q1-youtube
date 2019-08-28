@@ -1,0 +1,54 @@
+#buttonConteiner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  margin: 0 auto;
+  width: 150px;
+}
+
+#buttonCarrentPage {
+  margin: auto 10px;
+  border-radius: 50%;
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background-color: rgb(185, 61, 61);
+  color:  rgb(245, 238, 238);
+  border: 2px solid rgb(245, 238, 238);
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+}
+
+#buttonFirstPage {
+  margin-right: 10px;
+  color:  rgb(245, 238, 238);
+  font-weight: bold;
+  text-align: center;
+}
+
+#buttonFirstPage,
+#buttonPrevPage,
+#buttonNextPage {
+  padding: 0;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background-color: rgb(211, 147, 147);
+  border: 2px solid rgb(245, 238, 238);
+  cursor: pointer;
+  transition-duration: 3s;
+  transition-property: color;
+  outline: none;
+}
+
+#buttonFirstPage:hover,
+#buttonPrevPage:hover,
+#buttonNextPage:hover {
+  background-color: rgb(112, 248, 33);
+  outline: none;
+}

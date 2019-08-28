@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../assets/font/Roboto-Regular.ttf") format("truetype");
+}
+
+body {
+  background: #e3e3e3;
+  background-image: url('../assets/images/YouTube.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#searchConteiner {
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+}
+
+#searchInput,
+#searchButton {
+  outline: none;
+  border-radius: 5px;
+}
+
+#searchInput {
+  width: 100%;
+  height: 42px;
+  padding-left: 42px;
+  border: 2px solid rgb(48, 40, 40);
+  font-family: "Roboto-Regular";
+  font-size: 18px;
+}
+
+#searchInput:hover {
+  background-color: rgb(28, 218, 53);
+}
+
+#searchButton {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: rgb(253, 250, 250);
+  cursor: pointer;
+}
+
+#searchButton::before {
+  content: "\e800";
+  font-family: "fontello";
+  color: rgb(48, 40, 40);
+  font-size: 18px;
+}
+
+#searchButton:hover {
+  font-size: 22px;
+}
