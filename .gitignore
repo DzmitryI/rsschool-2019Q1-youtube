@@ -1,7 +1,0 @@
-.idea
-node_modules
-dist
-*.bundle.js
-*.log
-.eslintrc.json
-.prettierrc
