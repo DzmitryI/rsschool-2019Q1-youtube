@@ -17,7 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.15",
-    "ws": "^7.0.0"
+    "ws": "^7.4.6"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
